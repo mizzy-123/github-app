@@ -8,15 +8,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.SearchView
-import android.widget.SearchView.OnQueryTextListener
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubapp.adapter.ListDataSearchAdapter
-import com.dicoding.githubapp.api.RetrofitClient
-import com.dicoding.githubapp.api.response.DataSearch
 import com.dicoding.githubapp.api.response.DataSearchItems
 import com.dicoding.githubapp.databinding.ActivityMainBinding
 import com.dicoding.githubapp.model.MainViewModel
@@ -26,7 +21,6 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private var isLoading: Boolean = false
     private var list = ArrayList<DataSearchItems>()
     lateinit var listDataSearchAdapter: ListDataSearchAdapter
     @SuppressLint("NotifyDataSetChanged")
@@ -93,10 +87,6 @@ class MainActivity : AppCompatActivity() {
         recycleGithub.adapter = listDataSearchAdapter
         listDataSearchAdapter.setOnClickCallback(object : ListDataSearchAdapter.OnItemClickCallback{
             override fun onItemClicked(data: DataSearchItems, position: Int, viewAdapter: View) {
-//                val toDetailAcitivity = MainActivityDirections.actionMainActivityToDetailActivity()
-//                toDetailAcitivity.username = data.login
-//                viewAdapter.findNavController().navigate(toDetailAcitivity)
-//                Toast.makeText(this@MainActivity, "anda menekan list ke-$position", Toast.LENGTH_SHORT).show()
                 val intent = Intent(viewAdapter.context, DetailActivity::class.java)
                 intent.putExtra("username", data.login)
                 startActivity(intent)

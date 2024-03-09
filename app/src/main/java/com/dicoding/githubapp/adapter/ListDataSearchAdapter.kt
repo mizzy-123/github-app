@@ -5,11 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.dicoding.githubapp.api.response.DataSearch
 import com.dicoding.githubapp.api.response.DataSearchItems
 import com.dicoding.githubapp.databinding.ItemListviewBinding
 
-class ListDataSearchAdapter(val dataSearch: ArrayList<DataSearchItems>):
+class ListDataSearchAdapter(private val dataSearch: ArrayList<DataSearchItems>):
     RecyclerView.Adapter<ListDataSearchAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 

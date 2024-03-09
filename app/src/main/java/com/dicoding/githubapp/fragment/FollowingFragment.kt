@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubapp.DetailActivity
 import com.dicoding.githubapp.R
-import com.dicoding.githubapp.adapter.ListDataFollower
 import com.dicoding.githubapp.adapter.ListDataFollowing
 import com.dicoding.githubapp.api.response.DataFollowing
 import com.dicoding.githubapp.databinding.FragmentFollowingBinding
@@ -27,7 +26,7 @@ class FollowingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentFollowingBinding.inflate(inflater, container, false)
         followViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowViewModel::class.java)

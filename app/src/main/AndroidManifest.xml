@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,9 +16,11 @@
         android:theme="@style/Theme.GithubApp"
         tools:targetApi="31">
         <activity
+            tools:ignore="LockedOrientationActivity"
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
+            tools:ignore="LockedOrientationActivity"
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
@@ -27,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity
+            tools:ignore="LockedOrientationActivity"
             android:name=".MainActivity"
             android:exported="true"/>
     </application>

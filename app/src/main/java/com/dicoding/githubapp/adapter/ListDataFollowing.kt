@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.dicoding.githubapp.api.response.DataFollowing
 import com.dicoding.githubapp.databinding.ItemListviewBinding
 
-class ListDataFollowing(val dataFollowing: List<DataFollowing>):
+class ListDataFollowing(private val dataFollowing: List<DataFollowing>):
     RecyclerView.Adapter<ListDataFollowing.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
