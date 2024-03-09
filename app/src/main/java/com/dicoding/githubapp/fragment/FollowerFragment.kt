@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.githubapp.BuildConfig
 import com.dicoding.githubapp.DetailActivity
 import com.dicoding.githubapp.R
 import com.dicoding.githubapp.adapter.ListDataFollower
@@ -42,8 +43,7 @@ class FollowerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val username = DetailActivity.username
-        val resources: Resources = requireContext().resources
-        val token: String = resources.getString(R.string.token)
+        val token: String = BuildConfig.API_KEY
         followViewModel.getDataFollower(username, token)
 
         followViewModel.isLoading.observe(requireActivity()){

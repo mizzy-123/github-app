@@ -38,8 +38,7 @@ class MainActivity : AppCompatActivity() {
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query != null) {
-                    val resources: Resources = baseContext.resources
-                    val token: String = resources.getString(R.string.token)
+                    val token: String = BuildConfig.API_KEY
                     try {
                         MainScope().launch {
                             val defferedSearch = async {
