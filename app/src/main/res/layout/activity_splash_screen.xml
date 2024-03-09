@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rectangle_splash"
+    tools:context=".SplashScreen">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="227dp"
+            android:layout_height="227dp"
+            android:src="@drawable/logo_github"/>
+        <ImageView
+            android:layout_marginTop="200dp"
+            android:layout_width="189dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/github_text"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search your Account"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/passionone_bold"
+            android:textSize="35sp"/>
+    </LinearLayout>
+
+</FrameLayout>
