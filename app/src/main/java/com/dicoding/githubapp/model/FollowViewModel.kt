@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.dicoding.githubapp.BuildConfig
+import com.dicoding.githubapp.DetailActivity
 import com.dicoding.githubapp.api.RetrofitClient
 import com.dicoding.githubapp.api.response.DataFollowers
 import com.dicoding.githubapp.api.response.DataFollowing
@@ -24,6 +26,12 @@ class FollowViewModel: ViewModel() {
     private val _following = MutableLiveData<List<DataFollowing>>()
     val following: LiveData<List<DataFollowing>> = _following
 
+    init {
+        val username = DetailActivity.username
+        val token: String = BuildConfig.API_KEY
+        getDataFollowing(username, token)
+        getDataFollower(username, token)
+    }
     fun getDataFollower(username: String, token: String){
         MainScope().launch {
             try {

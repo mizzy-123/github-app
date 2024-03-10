@@ -38,10 +38,6 @@ class FollowingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val username = DetailActivity.username
-        val token: String = BuildConfig.API_KEY
-
-        followViewModel.getDataFollowing(username, token)
 
         followViewModel.isLoading2.observe(requireActivity()){
             if (it){

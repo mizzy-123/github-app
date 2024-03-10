@@ -72,10 +72,7 @@ class DetailActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun modelDetail(){
-        val token: String = BuildConfig.API_KEY
         detailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(DetailViewModel::class.java)
-
-        detailViewModel.getDetailAccount(username, token)
 
         detailViewModel.isLoading.observe(this){
             if(it){
