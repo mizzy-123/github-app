@@ -16,13 +16,16 @@
         android:theme="@style/Theme.GithubApp"
         tools:targetApi="31">
         <activity
-            tools:ignore="LockedOrientationActivity"
-            android:name=".DetailActivity"
+            android:name=".SettingActivity"
             android:exported="false" />
         <activity
-            tools:ignore="LockedOrientationActivity"
+            android:name=".DetailActivity"
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,9 +33,9 @@
             </intent-filter>
         </activity>
         <activity
-            tools:ignore="LockedOrientationActivity"
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
