@@ -101,6 +101,8 @@ class MainActivity : AppCompatActivity() {
         binding.toolBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId){
                 R.id.favourite -> {
+                    val intent = Intent(this@MainActivity, FavouriteActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.setting -> {
@@ -122,6 +124,8 @@ class MainActivity : AppCompatActivity() {
             override fun onItemClicked(data: DataSearchItems, position: Int, viewAdapter: View) {
                 val intent = Intent(viewAdapter.context, DetailActivity::class.java)
                 intent.putExtra("username", data.login)
+                intent.putExtra("id", data.id)
+                intent.putExtra("avatar", data.avatar_url)
                 startActivity(intent)
             }
 
